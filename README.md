@@ -12,7 +12,7 @@ threads.
 
 Install the module using luarocks (get luarocks [here](https://github.com/luarocks/luarocks/wiki/Download))
 
-```{shell}
+```shell
 luarocks install luasocket-lanes
 ```
 
@@ -20,7 +20,7 @@ luarocks install luasocket-lanes
 
 On a server thread you can use the following logic to process client connections in seperate thread:
 
-```{lua}
+```lua
 local lanes = require "lanes".configure
 local luaSocket = require "socket"
 
