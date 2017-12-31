@@ -75,7 +75,9 @@ static t_opt optget[] = {
     {"reuseaddr",   opt_get_reuseaddr},
     {"tcp-nodelay", opt_get_tcp_nodelay},
     {"linger",      opt_get_linger},
-    {"error",       opt_get_error},
+    {"rcvbuf",      opt_get_rcvbuf},
+    {"sndbuf",      opt_get_sndbuf},
+    {"debug",       opt_get_debug},
     {NULL,          NULL}
 };
 
@@ -84,7 +86,9 @@ static t_opt optset[] = {
     {"reuseaddr",   opt_set_reuseaddr},
     {"tcp-nodelay", opt_set_tcp_nodelay},
     {"ipv6-v6only", opt_set_ip6_v6only},
-    {"linger",      opt_set_linger},
+    {"rcvbuf",      opt_set_rcvbuf},
+    {"sndbuf",      opt_set_sndbuf},
+    {"debug",       opt_set_debug},
     {NULL,          NULL}
 };
 
