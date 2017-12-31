@@ -1,8 +1,8 @@
 package = "LuaSocket-Lanes"
-version = "3.0-1"
+version = "3.0-2"
 source = {
-   url = "https://github.com/djfdyuruiry/luasocket-lanes/archive/fd_support.zip",
-   dir = "luasocket-lanes-fd_support",
+   url = "https://github.com/djfdyuruiry/luasocket-lanes/archive/v3.0-2.zip",
+   dir = "luasocket-lanes-v3.0-2",
 }
 description = {
    summary = "Network support for the Lua language, now with Lua Lanes support!",

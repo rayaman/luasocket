@@ -39,9 +39,21 @@ while true do
 end
 ```
 
-*I have ommited error handling from the above example, all the ```err``` variables should be checked before the next operation.*
+*I have ommited error handling from the above example, all the `err` variables should be checked before the next operation.*
 
 **Note: All luasocket modules are provided by luasocket-lanes, but with the postfix '-lanes', this is to allow side by side install of luasocket and luasocket-lanes.**
+
+----
+
+## Other enhancements
+
+A few more socket options are now supported. You can now get/set the following using the `socket:getoption` and `socket:setoption` methods:
+
+- `rcvbuf` - `int` - **The recieve buffer size in bytes** (`SO_RCVBUF`)
+- `sndbuf` - `int` - **The send buffer size in bytes** (`SO_SNDBUF`)
+- `debug` - `bool` - **Flag for socket debugging** (`SO_DEBUG`)
+
+All of the above options are documented in more detail [here](http://man7.org/linux/man-pages/man7/socket.7.html) (*search for the option code in brackets above*)
 
 ---
 
