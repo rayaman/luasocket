@@ -7,6 +7,6 @@ for p in Release Debug x64/Release x64/Debug; do
             cp $p/$el/core.$e ../bin/$p/$el/
         done;
     done;
-    cp src/ltn12.lua src/socket.lua src/mime.lua ../bin/$p/
-    cp src/http.lua src/url.lua src/tp.lua src/ftp.lua src/headers.lua src/smtp.lua ../bin/$p/socket/
+    cp src/ltn12-lanes.lua src/socket-lanes.lua src/mime-lanes.lua ../bin/$p/
+    cp src/http-lanes.lua src/url-lanes.lua src/tp-lanes.lua src/ftp-lanes.lua src/headers-lanes.lua src/smtp-lanes.lua ../bin/$p/socket/
 done;

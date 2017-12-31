@@ -1,5 +1,5 @@
 local socket = require"socket"
-socket.unix = require"socket.unix"
+socket-lanes.unix = require"socket-lanes.unix"
 
 host = host or "luasocket"
 

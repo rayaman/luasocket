@@ -1,7 +1,7 @@
-local socket = require("socket")
-local ftp = require("socket.ftp")
-local url = require("socket.url")
-local ltn12 = require("ltn12")
+local socket = require("socket-lanes")
+local ftp = require("socket-lanes.ftp")
+local url = require("socket-lanes.url")
+local ltn12 = require("ltn12-lanes")
 
 -- override protection to make sure we see all errors
 --socket.protect = function(s) return s end

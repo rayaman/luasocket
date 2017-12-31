@@ -5,7 +5,7 @@
 * LuaSocket toolkit
 *
 * This module provides functions to implement transfer content encodings
-* and formatting conforming to RFC 2045. It is used by mime.lua, which
+* and formatting conforming to RFC 2045. It is used by mime-lanes.lua, which
 * provide a higher level interface to this functionality. 
 \*=========================================================================*/
 #include "lua.h"

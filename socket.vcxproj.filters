@@ -15,28 +15,28 @@
     <ClCompile Include="src\wsocket.c" />
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="src\ltn12.lua">
+    <CustomBuild Include="src\ltn12-lanes.lua">
       <Filter>cdir</Filter>
     </CustomBuild>
-    <CustomBuild Include="src\socket.lua">
+    <CustomBuild Include="src\socket-lanes.lua">
       <Filter>cdir</Filter>
     </CustomBuild>
-    <CustomBuild Include="src\ftp.lua">
+    <CustomBuild Include="src\ftp-lanes.lua">
       <Filter>ldir</Filter>
     </CustomBuild>
-    <CustomBuild Include="src\headers.lua">
+    <CustomBuild Include="src\headers-lanes.lua">
       <Filter>ldir</Filter>
     </CustomBuild>
-    <CustomBuild Include="src\http.lua">
+    <CustomBuild Include="src\http-lanes.lua">
       <Filter>ldir</Filter>
     </CustomBuild>
-    <CustomBuild Include="src\smtp.lua">
+    <CustomBuild Include="src\smtp-lanes.lua">
       <Filter>ldir</Filter>
     </CustomBuild>
-    <CustomBuild Include="src\tp.lua">
+    <CustomBuild Include="src\tp-lanes.lua">
       <Filter>ldir</Filter>
     </CustomBuild>
-    <CustomBuild Include="src\url.lua">
+    <CustomBuild Include="src\url-lanes.lua">
       <Filter>ldir</Filter>
     </CustomBuild>
   </ItemGroup>

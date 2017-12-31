@@ -64,7 +64,7 @@ To obtain the <tt>mime</tt> namespace, run:
 
 <pre class=example>
 -- loads the MIME module and everything it requires
-local mime = require("mime")
+local mime = require("mime-lanes")
 </pre>
 
 
@@ -336,7 +336,7 @@ Notice the extra parenthesis around the call to <tt>mime.qp</tt>, to discard the
 </p>
 
 <pre class=example>
-print((mime.qp("maçã")))
+print((mime.qp("maï¿½ï¿½")))
 --&gt; ma=E7=E3=
 </pre>
 
@@ -422,7 +422,7 @@ Notice the extra parenthesis around the call to <tt>mime.unqp</tt>, to discard t
 
 <pre class=example>
 print((mime.qp("ma=E7=E3=")))
---&gt; maçã
+--&gt; maï¿½ï¿½
 </pre>
 
 <!-- wrp ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->

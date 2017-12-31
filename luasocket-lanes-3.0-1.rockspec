@@ -1,5 +1,5 @@
 package = "LuaSocket-Lanes"
-version = "v3.0.1"
+version = "3.0-1"
 source = {
    url = "https://github.com/djfdyuruiry/luasocket-lanes/archive/fd_support.zip",
    dir = "luasocket-lanes-fd_support",
@@ -62,36 +62,36 @@ local function make_plat(plat)
       }
    }
    local modules = {
-      ["socket.core"] = {
+      ["socket-lanes.core"] = {
          sources = { "src/luasocket.c", "src/timeout.c", "src/buffer.c", "src/io.c", "src/auxiliar.c",
                      "src/options.c", "src/inet.c", "src/except.c", "src/select.c", "src/tcp.c", "src/udp.c" },
          defines = defines[plat],
          incdir = "src"
       },
-      ["mime.core"] = { 
+      ["mime-lanes.core"] = { 
          sources = { "src/mime.c" },
          defines = defines[plat],
          incdir = "src"
       },
-      ["socket.http"] = "src/http.lua",
-      ["socket.url"] = "src/url.lua",
-      ["socket.tp"] = "src/tp.lua",
-      ["socket.ftp"] = "src/ftp.lua",
-      ["socket.headers"] = "src/headers.lua",
-      ["socket.smtp"] = "src/smtp.lua",
-      ltn12 = "src/ltn12.lua",
-      socket = "src/socket.lua",
-      mime = "src/mime.lua"
+      ["socket.http"] = "src/http-lanes.lua",
+      ["socket.url"] = "src/url-lanes.lua",
+      ["socket.tp"] = "src/tp-lanes.lua",
+      ["socket.ftp"] = "src/ftp-lanes.lua",
+      ["socket.headers"] = "src/headers-lanes.lua",
+      ["socket.smtp"] = "src/smtp-lanes.lua",
+      ltn12 = "src/ltn12-lanes.lua",
+      socket = "src/socket-lanes.lua",
+      mime = "src/mime-lanes.lua"
    }
    if plat == "unix" or plat == "macosx" then
-      modules["socket.core"].sources[#modules["socket.core"].sources+1] = "src/usocket.c"
-      modules["socket.unix"] = {
+      modules["socket-lanes.core"].sources[#modules["socket-lanes.core"].sources+1] = "src/usocket.c"
+      modules["socket-lanes.unix"] = {
          sources = { "src/buffer.c", "src/auxiliar.c", "src/options.c", "src/timeout.c", "src/io.c", 
                      "src/usocket.c", "src/unix.c" },
          defines = defines[plat],
          incdir = "/src"
       }
-      modules["socket.serial"] = {
+      modules["socket-lanes.serial"] = {
          sources = { "src/buffer.c", "src/auxiliar.c", "src/options.c", "src/timeout.c",
                      "src/io.c", "src/usocket.c", "src/serial.c" },
          defines = defines[plat],
@@ -99,8 +99,8 @@ local function make_plat(plat)
       }
    end
    if plat == "win32" or plat == "mingw32" then
-      modules["socket.core"].sources[#modules["socket.core"].sources+1] = "src/wsocket.c"
-      modules["socket.core"].libraries = { "ws2_32" }
+      modules["socket-lanes.core"].sources[#modules["socket-lanes.core"].sources+1] = "src/wsocket.c"
+      modules["socket-lanes.core"].libraries = { "ws2_32" }
    end
    return { modules = modules }
 end

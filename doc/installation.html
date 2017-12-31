@@ -63,15 +63,15 @@ documentation for details.) Here is the standard LuaSocket
 distribution directory structure:</p>
 
 <pre class=example>
-&lt;LDIR&gt;/ltn12.lua
-&lt;LDIR&gt;/socket.lua
+&lt;LDIR&gt;/ltn12-lanes.lua
+&lt;LDIR&gt;/socket-lanes.lua
 &lt;CDIR&gt;/socket/core.dll
-&lt;LDIR&gt;/socket/http.lua
-&lt;LDIR&gt;/socket/tp.lua
-&lt;LDIR&gt;/socket/ftp.lua
-&lt;LDIR&gt;/socket/smtp.lua
-&lt;LDIR&gt;/socket/url.lua
-&lt;LDIR&gt;/mime.lua
+&lt;LDIR&gt;/socket/http-lanes.lua
+&lt;LDIR&gt;/socket/tp-lanes.lua
+&lt;LDIR&gt;/socket/ftp-lanes.lua
+&lt;LDIR&gt;/socket/smtp-lanes.lua
+&lt;LDIR&gt;/socket/url-lanes.lua
+&lt;LDIR&gt;/mime-lanes.lua
 &lt;CDIR&gt;/mime/core.dll
 </pre>
 
@@ -87,7 +87,7 @@ it should be easy to use LuaSocket. Just fire the interpreter and use the
 
 <pre class=example>
 Lua 5.2.2  Copyright (C) 1994-2013 Lua.org, PUC-Rio
-&gt; socket = require("socket")
+&gt; socket = require("socket-lanes")
 &gt; print(socket._VERSION)
 --&gt; LuaSocket 3.0-rc1
 </pre>
@@ -97,7 +97,7 @@ load the modules you directly depend upon: </p>
 
 <pre class=example>
 Lua 5.2.2  Copyright (C) 1994-2013 Lua.org, PUC-Rio
-&gt; http = require("socket.http")
+&gt; http = require("socket-lanes.http")
 &gt; print(http.request("http://www.impa.br/~diego/software/luasocket"))
 --&gt; homepage gets dumped to terminal
 </pre>

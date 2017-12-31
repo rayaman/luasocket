@@ -14,7 +14,7 @@ local files = {
 local t = socket.time()
 local err
 
-dofile("mbox.lua")
+dofile("mbox-lanes.lua")
 local parse = mbox.parse
 dofile("testsupport.lua")
 

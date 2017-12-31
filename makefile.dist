@@ -35,7 +35,7 @@ ETC = \
 	etc/get.lua \
 	etc/lp.lua \
 	etc/qp.lua \
-	etc/tftp.lua
+	etc/tftp-lanes.lua
 
 SRC = \
 	src/makefile \
@@ -71,15 +71,15 @@ SRC = \
 	src/usocket.h \
 	src/wsocket.c \
 	src/wsocket.h \
-	src/ftp.lua \
-	src/http.lua \
-	src/ltn12.lua \
-	src/mime.lua \
-	src/smtp.lua \
-	src/socket.lua \
-	src/headers.lua \
-	src/tp.lua \
-	src/url.lua
+	src/ftp-lanes.lua \
+	src/http-lanes.lua \
+	src/ltn12-lanes.lua \
+	src/mime-lanes.lua \
+	src/smtp-lanes.lua \
+	src/socket-lanes.lua \
+	src/headers-lanes.lua \
+	src/tp-lanes.lua \
+	src/url-lanes.lua
 
 MAKE = \
 	makefile \

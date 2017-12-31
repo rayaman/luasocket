@@ -1,7 +1,7 @@
 This directory contains code that is more useful than the
 samples. This code *is* supported.
 
-    tftp.lua                -- Trivial FTP client
+    tftp-lanes.lua                -- Trivial FTP client
 
 This module implements file retrieval by the TFTP protocol.
 Its main use was to test the UDP code, but since someone

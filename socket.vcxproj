@@ -33,7 +33,7 @@
     <ClCompile Include="src\wsocket.c" />
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="src\ltn12.lua">
+    <CustomBuild Include="src\ltn12-lanes.lua">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copy %(FullPath) $(LUABIN_PATH)$(Configuration)</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copy %(FullPath) $(LUABIN_PATH)$(Configuration)</Command>
@@ -44,7 +44,7 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(LUABIN_PATH)$(Platform)\$(Configuration)\%(Filename)%(Extension)</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(LUABIN_PATH)$(Platform)\$(Configuration)\%(Filename)%(Extension)</Outputs>
     </CustomBuild>
-    <CustomBuild Include="src\socket.lua">
+    <CustomBuild Include="src\socket-lanes.lua">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copy %(FullPath) $(LUABIN_PATH)$(Configuration)</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copy %(FullPath) $(LUABIN_PATH)$(Configuration)</Command>
@@ -57,7 +57,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="src\ftp.lua">
+    <CustomBuild Include="src\ftp-lanes.lua">
       <FileType>Document</FileType>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(LUABIN_PATH)$(Platform)\$(Configuration)\socket\%(Filename)%(Extension)</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(LUABIN_PATH)$(Platform)\$(Configuration)\socket\%(Filename)%(Extension)</Outputs>
@@ -68,7 +68,7 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copy %(FullPath) $(LUABIN_PATH)$(Configuration)\socket</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copy %(FullPath) $(LUABIN_PATH)$(Configuration)\socket</Command>
     </CustomBuild>
-    <CustomBuild Include="src\headers.lua">
+    <CustomBuild Include="src\headers-lanes.lua">
       <FileType>Document</FileType>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(LUABIN_PATH)$(Platform)\$(Configuration)\socket\%(Filename)%(Extension)</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(LUABIN_PATH)$(Platform)\$(Configuration)\socket\%(Filename)%(Extension)</Outputs>
@@ -79,7 +79,7 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copy %(FullPath) $(LUABIN_PATH)$(Configuration)\socket</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copy %(FullPath) $(LUABIN_PATH)$(Configuration)\socket</Command>
     </CustomBuild>
-    <CustomBuild Include="src\http.lua">
+    <CustomBuild Include="src\http-lanes.lua">
       <FileType>Document</FileType>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(LUABIN_PATH)$(Platform)\$(Configuration)\socket\%(Filename)%(Extension)</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(LUABIN_PATH)$(Platform)\$(Configuration)\socket\%(Filename)%(Extension)</Outputs>
@@ -90,7 +90,7 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copy %(FullPath) $(LUABIN_PATH)$(Configuration)\socket</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copy %(FullPath) $(LUABIN_PATH)$(Configuration)\socket</Command>
     </CustomBuild>
-    <CustomBuild Include="src\smtp.lua">
+    <CustomBuild Include="src\smtp-lanes.lua">
       <FileType>Document</FileType>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(LUABIN_PATH)$(Platform)\$(Configuration)\socket\%(Filename)%(Extension)</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(LUABIN_PATH)$(Platform)\$(Configuration)\socket\%(Filename)%(Extension)</Outputs>
@@ -101,7 +101,7 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copy %(FullPath) $(LUABIN_PATH)$(Configuration)\socket</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copy %(FullPath) $(LUABIN_PATH)$(Configuration)\socket</Command>
     </CustomBuild>
-    <CustomBuild Include="src\tp.lua">
+    <CustomBuild Include="src\tp-lanes.lua">
       <FileType>Document</FileType>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(LUABIN_PATH)$(Platform)\$(Configuration)\socket\%(Filename)%(Extension)</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(LUABIN_PATH)$(Platform)\$(Configuration)\socket\%(Filename)%(Extension)</Outputs>
@@ -112,7 +112,7 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copy %(FullPath) $(LUABIN_PATH)$(Configuration)\socket</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copy %(FullPath) $(LUABIN_PATH)$(Configuration)\socket</Command>
     </CustomBuild>
-    <CustomBuild Include="src\url.lua">
+    <CustomBuild Include="src\url-lanes.lua">
       <FileType>Document</FileType>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(LUABIN_PATH)$(Platform)\$(Configuration)\socket\%(Filename)%(Extension)</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(LUABIN_PATH)$(Platform)\$(Configuration)\socket\%(Filename)%(Extension)</Outputs>

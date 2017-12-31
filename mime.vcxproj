@@ -22,7 +22,7 @@
     <ClCompile Include="src\mime.c" />
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="src\mime.lua">
+    <CustomBuild Include="src\mime-lanes.lua">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copy %(FullPath) $(LUABIN_PATH)$(Configuration)</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(LUABIN_PATH)$(Configuration)\%(Filename)%(Extension)</Outputs>

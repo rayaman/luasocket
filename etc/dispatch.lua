@@ -5,7 +5,7 @@
 -----------------------------------------------------------------------------
 local base = _G
 local table = require("table")
-local socket = require("socket")
+local socket = require("socket-lanes")
 local coroutine = require("coroutine")
 module("dispatch")
 

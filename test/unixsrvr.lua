@@ -1,5 +1,5 @@
     socket = require"socket"
-    socket.unix = require"socket.unix"
+    socket-lanes.unix = require"socket-lanes.unix"
     u = assert(socket.unix())
     assert(u:bind("/tmp/foo"))
     assert(u:listen())

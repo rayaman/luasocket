@@ -52,7 +52,7 @@ To obtain the <tt>ltn12</tt> namespace, run:
 
 <pre class=example>
 -- loads the LTN21 module
-local ltn12 = require("ltn12")
+local ltn12 = require("ltn12-lanes")
 </pre>
 
 <!-- filters ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -88,8 +88,8 @@ unaltered.
 
 <pre class=example>
 -- load required modules
-local ltn12 = require("ltn12")
-local mime = require("mime")
+local ltn12 = require("ltn12-lanes")
+local mime = require("mime-lanes")
 
 -- create a silly identity filter
 id = ltn12.filter.chain(
@@ -123,7 +123,7 @@ The function returns the high-level filter.
 
 <pre class=example>
 -- load the ltn12 module
-local ltn12 = require("ltn12")
+local ltn12 = require("ltn12-lanes")
 
 -- the base64 mime filter factory
 encodet['base64'] = function()
@@ -220,7 +220,7 @@ fit nicely with the <tt>io.open</tt> function.
 
 <pre class=example>
 -- load the ltn12 module
-local ltn12 = require("ltn12")
+local ltn12 = require("ltn12-lanes")
 
 -- copy a file
 ltn12.pump.all(
@@ -271,8 +271,8 @@ The function returns the sink and the table used to store the chunks.
 
 <pre class=example>
 -- load needed modules
-local http = require("socket.http")
-local ltn12 = require("ltn12")
+local http = require("socket-lanes.http")
+local ltn12 = require("ltn12-lanes")
 
 -- a simplified http.get function
 function http.get(u)
@@ -375,7 +375,7 @@ fit nicely with the <tt>io.open</tt> function.
 
 <pre class=example>
 -- load the ltn12 module
-local ltn12 = require("ltn12")
+local ltn12 = require("ltn12-lanes")
 
 -- copy a file
 ltn12.pump.all(

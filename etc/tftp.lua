@@ -11,9 +11,9 @@ local base = _G
 local table = require("table")
 local math = require("math")
 local string = require("string")
-local socket = require("socket")
-local ltn12 = require("ltn12")
-local url = require("socket.url")
+local socket = require("socket-lanes")
+local ltn12 = require("ltn12-lanes")
+local url = require("socket-lanes.url")
 module("socket.tftp")
 
 -----------------------------------------------------------------------------

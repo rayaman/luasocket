@@ -1,5 +1,5 @@
-local socket = require("socket")
-socket.url = require("socket.url")
+local socket = require("socket-lanes")
+socket.url = require("socket-lanes.url")
 dofile("testsupport.lua")
 
 local check_build_url = function(parsed)

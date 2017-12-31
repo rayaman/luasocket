@@ -1,4 +1,4 @@
-local socket = require("socket")
+local socket = require("socket-lanes")
 try = socket.newtry(function()
     print("finalized!!!")
 end)

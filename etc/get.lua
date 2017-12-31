@@ -3,11 +3,11 @@
 -- LuaSocket sample files
 -- Author: Diego Nehab
 -----------------------------------------------------------------------------
-local socket = require("socket")
-local http = require("socket.http")
-local ftp = require("socket.ftp")
-local url = require("socket.url")
-local ltn12 = require("ltn12")
+local socket = require("socket-lanes")
+local http = require("socket-lanes.http")
+local ftp = require("socket-lanes.ftp")
+local url = require("socket-lanes.url")
+local ltn12 = require("ltn12-lanes")
 
 -- formats a number of seconds into human readable form
 function nicetime(s)

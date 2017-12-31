@@ -9,7 +9,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="src\mime.lua">
+    <CustomBuild Include="src\mime-lanes.lua">
       <Filter>cdir</Filter>
     </CustomBuild>
   </ItemGroup>

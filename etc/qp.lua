@@ -3,8 +3,8 @@
 -- LuaSocket sample files
 -- Author: Diego Nehab
 -----------------------------------------------------------------------------
-local ltn12 = require("ltn12")
-local mime = require("mime")
+local ltn12 = require("ltn12-lanes")
+local mime = require("mime-lanes")
 local convert
 arg = arg or {}
 local mode = arg and arg[1] or "-et"

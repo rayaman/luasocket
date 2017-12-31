@@ -10,9 +10,9 @@
 local base = _G
 local string = require("string")
 local table = require("table")
-local socket = require("socket")
-local url = require("socket.url")
-local tp = require("socket.tp")
+local socket = require("socket-lanes")
+local url = require("socket-lanes.url")
+local tp = require("socket-lanes.tp")
 module("socket.dict")
 
 -----------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-local ltn12 = require("ltn12")
+local ltn12 = require("ltn12-lanes")
 
 dofile("testsupport.lua")
 
