@@ -43,6 +43,14 @@ end
 
 **Note: All luasocket modules are provided by luasocket-lanes, but with the postfix '-lanes', this is to allow side by side install of luasocket and luasocket-lanes.**
 
+---
+
+## Note about Lua Lanes
+
+While this library was made for working with Lua Lanes, it does not require that library to be installed and used.
+Because file descriptors are simple numbers, you could use this to deal with client requests anywhere you wish, using 
+another lua threading library, other language runtimes etc.
+
 ----
 
 ## LuaSocket

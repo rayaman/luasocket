@@ -14,6 +14,10 @@ description = {
       threads. 
       
       See the main readme to get started: https://github.com/djfdyuruiry/luasocket/blob/master/README
+    
+      While this library was made for working with Lua Lanes, it does not require that library to be installed and used.
+      Because file descriptors are simple numbers, you could use this to deal with client requests anywhere you wish, using 
+      another lua threading library, other language runtimes etc.
       ----
 
       LuaSocket is a Lua extension library that is composed by two parts: a C core
