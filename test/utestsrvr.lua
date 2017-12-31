@@ -1,6 +1,6 @@
 socket=require("socket-lanes");
 os.remove("/tmp/luasocket")
-socket-lanes.unix = require("socket-lanes-lanes.unix");
+socket-lanes.unix = require("socket-lanes.unix");
 host = host or "luasocket";
 server = assert(socket.unix())
 assert(server:bind(host))

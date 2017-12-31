@@ -73,15 +73,15 @@ local function make_plat(plat)
          defines = defines[plat],
          incdir = "src"
       },
-      ["socket.http"] = "src/http-lanes.lua",
-      ["socket.url"] = "src/url-lanes.lua",
-      ["socket.tp"] = "src/tp-lanes.lua",
-      ["socket.ftp"] = "src/ftp-lanes.lua",
-      ["socket.headers"] = "src/headers-lanes.lua",
-      ["socket.smtp"] = "src/smtp-lanes.lua",
-      ltn12 = "src/ltn12-lanes.lua",
-      socket = "src/socket-lanes.lua",
-      mime = "src/mime-lanes.lua"
+      ["socket-lanes.http"] = "src/http-lanes.lua",
+      ["socket-lanes.url"] = "src/url-lanes.lua",
+      ["socket-lanes.tp"] = "src/tp-lanes.lua",
+      ["socket-lanes.ftp"] = "src/ftp-lanes.lua",
+      ["socket-lanes.headers"] = "src/headers-lanes.lua",
+      ["socket-lanes.smtp"] = "src/smtp-lanes.lua",
+      ["ltn12-lanes"] = "src/ltn12-lanes.lua",
+      ["socket-lanes"] = "src/socket-lanes.lua",
+      ["mime-lanes"] = "src/mime-lanes.lua"
    }
    if plat == "unix" or plat == "macosx" then
       modules["socket-lanes.core"].sources[#modules["socket-lanes.core"].sources+1] = "src/usocket.c"
