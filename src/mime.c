@@ -79,7 +79,7 @@ static UC b64unbase[256];
 /*-------------------------------------------------------------------------*\
 * Initializes module
 \*-------------------------------------------------------------------------*/
-MIME_API int luaopen_mime_core(lua_State *L)
+MIME_API int luaopen_lanes_core(lua_State *L)
 {
 #if LUA_VERSION_NUM > 501 && !defined(LUA_COMPAT_MODULE)
     lua_newtable(L);

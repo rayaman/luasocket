@@ -80,7 +80,7 @@ static luaL_Reg func[] = {
 /*-------------------------------------------------------------------------*\
 * Initializes module
 \*-------------------------------------------------------------------------*/
-int luaopen_socket_unix(lua_State *L) {
+int luaopen_lanes_unix(lua_State *L) {
     /* create classes */
     auxiliar_newclass(L, "unix{master}", unix_methods);
     auxiliar_newclass(L, "unix{client}", unix_methods);
