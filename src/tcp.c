@@ -437,7 +437,7 @@ static int tcp_create(lua_State *L, int family) {
             (p_error) socket_ioerror, &tcp->sock);
     timeout_init(&tcp->tm, -1, -1);
     buffer_init(&tcp->buf, &tcp->io, &tcp->tm);
-    if (family != AF_UNSPEC) {
+    if (family != AF_UNSPEC) {//p_socket ps, int family, int type, int protocol
         const char *err = inet_trycreate(&tcp->sock, family, SOCK_STREAM, 0);
     }
     t_socket sock;
@@ -445,7 +445,7 @@ static int tcp_create(lua_State *L, int family) {
     
     if (fileDescriptor < 1) {
         // create new master socket
-        const char *err = inet_trycreate(&sock, family, SOCK_STREAM);
+        const char *err = inet_trycreate(&sock, family, SOCK_STREAM, 0);
 
         if (err != NULL) {
             lua_pushnil(L);
