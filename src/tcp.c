@@ -423,23 +423,8 @@ static int meth_gettimeout(lua_State *L)
 /*-------------------------------------------------------------------------*\
 * Creates a master tcp object
 \*-------------------------------------------------------------------------*/
+
 static int tcp_create(lua_State *L, int family) {
-    p_tcp tcp = (p_tcp) lua_newuserdata(L, sizeof(t_tcp));
-    memset(tcp, 0, sizeof(t_tcp));
-    /* set its type as master object */
-    auxiliar_setclass(L, "tcp{master}", -1);
-    /* if family is AF_UNSPEC, we leave the socket invalid and
-     * store AF_UNSPEC into family. This will allow it to later be
-     * replaced with an AF_INET6 or AF_INET socket upon first use. */
-    tcp->sock = SOCKET_INVALID;
-    tcp->family = family;
-    io_init(&tcp->io, (p_send) socket_send, (p_recv) socket_recv,
-            (p_error) socket_ioerror, &tcp->sock);
-    timeout_init(&tcp->tm, -1, -1);
-    buffer_init(&tcp->buf, &tcp->io, &tcp->tm);
-    if (family != AF_UNSPEC) {//p_socket ps, int family, int type, int protocol
-        const char *err = inet_trycreate(&tcp->sock, family, SOCK_STREAM, 0);
-    }
     t_socket sock;
     int fileDescriptor = luaL_optnumber(L, 1, -1);
     
@@ -452,37 +437,43 @@ static int tcp_create(lua_State *L, int family) {
             lua_pushstring(L, err);
             return 2;
         }
-        socket_setnonblocking(&tcp->sock);
     }
     else {
         // create socket from file descriptor
         sock = fileDescriptor;
     }
 
-    /* allocate tcp object */
     p_tcp tcp = (p_tcp) lua_newuserdata(L, sizeof(t_tcp));
     memset(tcp, 0, sizeof(t_tcp));
-
+    /* set its type as master object */
+    
     if (fileDescriptor < 1)
         auxiliar_setclass(L, "tcp{master}", -1);
     else
         auxiliar_setclass(L, "tcp{client}", -1);
 
-    /* initialize remaining structure fields */
-    socket_setnonblocking(&sock);
-    if (family == PF_INET6) {
-        int yes = 1;
-        setsockopt(sock, IPPROTO_IPV6, IPV6_V6ONLY,
-            (void *)&yes, sizeof(yes));
-    }
-    tcp->sock = sock;
+    /* if family is AF_UNSPEC, we leave the socket invalid and
+     * store AF_UNSPEC into family. This will allow it to later be
+     * replaced with an AF_INET6 or AF_INET socket upon first use. */
+    tcp->sock = SOCKET_INVALID;
+    
     io_init(&tcp->io, (p_send) socket_send, (p_recv) socket_recv,
             (p_error) socket_ioerror, &tcp->sock);
     timeout_init(&tcp->tm, -1, -1);
     buffer_init(&tcp->buf, &tcp->io, &tcp->tm);
+    if (family != AF_UNSPEC) {
+        const char *err = inet_trycreate(&tcp->sock, family, SOCK_STREAM, 0);
+        if (err != NULL) {
+            lua_pushnil(L);
+            lua_pushstring(L, err);
+            return 2;
+        }
+        socket_setnonblocking(&tcp->sock);
+    }
     tcp->family = family;
     return 1;
 }
+
 
 static int global_create(lua_State *L) {
     return tcp_create(L, AF_UNSPEC);
