@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "auxiliar.h": "c",
+        "options.h": "c",
+        "inet.h": "c",
+        "socket.h": "c"
+    }
+}

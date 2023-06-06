@@ -369,6 +369,35 @@ int opt_get_error(lua_State *L, p_socket ps)
     lua_pushstring(L, socket_strerror(val));
     return 1;
 }
+int opt_get_rcvbuf(lua_State *L, p_socket ps)
+{
+  return opt_getint(L, ps, SOL_SOCKET, SO_RCVBUF);
+}
+
+int opt_set_rcvbuf(lua_State *L, p_socket ps)
+{
+  return opt_setint(L, ps, SOL_SOCKET, SO_RCVBUF);
+}
+
+int opt_get_sndbuf(lua_State *L, p_socket ps)
+{
+  return opt_getint(L, ps, SOL_SOCKET, SO_SNDBUF);
+}
+
+int opt_set_sndbuf(lua_State *L, p_socket ps)
+{
+  return opt_setint(L, ps, SOL_SOCKET, SO_SNDBUF);
+}
+
+int opt_get_debug(lua_State *L, p_socket ps)
+{
+    return opt_getboolean(L, ps, SOL_SOCKET, SO_DEBUG); 
+}
+
+int opt_set_debug(lua_State *L, p_socket ps)
+{
+    return opt_setboolean(L, ps, SOL_SOCKET, SO_DEBUG); 
+}
 
 /*=========================================================================*\
 * Auxiliar functions

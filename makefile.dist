@@ -22,17 +22,20 @@ SAMPLES = \
 	samples/lpr.lua \
 	samples/talker.lua \
 	samples/tinyirc.lua
-	samples/b64.lua \
-	samples/check-links.lua \
-	samples/check-memory.lua \
-	samples/dict.lua \
-	samples/dispatch.lua \
-	samples/eol.lua \
-	samples/forward.lua \
-	samples/get.lua \
-	samples/lp.lua \
-	samples/qp.lua \
-	samples/tftp.lua
+
+ETC = \
+	etc/README \
+	etc/b64.lua \
+	etc/check-links.lua \
+	etc/check-memory.lua \
+	etc/dict.lua \
+	etc/dispatch.lua \
+	etc/eol.lua \
+	etc/forward.lua \
+	etc/get.lua \
+	etc/lp.lua \
+	etc/qp.lua \
+	etc/tftp-lanes.lua
 
 SRC = \
 	src/makefile \
@@ -68,15 +71,15 @@ SRC = \
 	src/usocket.h \
 	src/wsocket.c \
 	src/wsocket.h \
-	src/ftp.lua \
-	src/http.lua \
-	src/ltn12.lua \
-	src/mime.lua \
-	src/smtp.lua \
-	src/socket.lua \
-	src/headers.lua \
-	src/tp.lua \
-	src/url.lua
+	src/ftp-lanes.lua \
+	src/http-lanes.lua \
+	src/ltn12-lanes.lua \
+	src/mime-lanes.lua \
+	src/smtp-lanes.lua \
+	src/socket-lanes.lua \
+	src/headers-lanes.lua \
+	src/tp-lanes.lua \
+	src/url-lanes.lua
 
 MAKE = \
 	makefile \

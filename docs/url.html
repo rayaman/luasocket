@@ -51,7 +51,7 @@ To obtain the <tt>url</tt> namespace, run:
 
 <pre class=example>
 -- loads the URL module 
-local url = require("socket.url")
+local url = require("socket-lanes.url")
 </pre>
 
 <p>
@@ -192,7 +192,7 @@ The function returns the encoded string.
 
 <pre class=example>
 -- load url module
-url = require("socket.url")
+url = require("socket-lanes.url")
 
 code = url.escape("/#?;")
 -- code = "%2f%23%3f%3b"
@@ -238,7 +238,7 @@ parsed_url = {<br>
 
 <pre class=example>
 -- load url module
-url = require("socket.url")
+url = require("socket-lanes.url")
 
 parsed_url = url.parse("http://www.example.com/cgilua/index.lua?a=2#there")
 -- parsed_url = {

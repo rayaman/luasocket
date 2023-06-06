@@ -180,7 +180,7 @@ program.
 
 <pre class=example>
 -- load namespace
-local socket = require("socket")
+local socket = require("socket-lanes")
 -- create a TCP socket and bind it to the local host, at any port
 local server = assert(socket.bind("*", 0))
 -- find out which port the OS chose for us
@@ -285,7 +285,7 @@ error message.
 -- change here to the host an port you want to contact
 local host, port = "localhost", 13
 -- load namespace
-local socket = require("socket")
+local socket = require("socket-lanes")
 -- convert host name to ip address
 local ip = assert(socket.dns.toip(host))
 -- create a new UDP object

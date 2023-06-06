@@ -1,4 +1,4 @@
-socket = require("socket");
+socket = require("socket-lanes");
 host = host or "localhost";
 port = port or "8383";
 server = assert(socket.bind(host, port));

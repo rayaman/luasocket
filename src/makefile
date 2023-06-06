@@ -348,17 +348,17 @@ SERIAL_OBJS=\
 # Files to install
 #
 TO_SOCKET_LDIR= \
-	http.lua \
-	url.lua \
-	tp.lua \
-	ftp.lua \
-	headers.lua \
-	smtp.lua
+	http-lanes.lua \
+	url-lanes.lua \
+	tp-lanes.lua \
+	ftp-lanes.lua \
+	headers-lanes.lua \
+	smtp-lanes.lua
 
 TO_TOP_LDIR= \
-	ltn12.lua \
-	socket.lua \
-	mime.lua
+	ltn12-lanes.lua \
+	socket-lanes.lua \
+	mime-lanes.lua
 
 #------
 # Targets

@@ -4,9 +4,9 @@
 -- LuaSocket sample files
 -- Author: Diego Nehab
 -----------------------------------------------------------------------------
-local url = require("socket.url")
-local dispatch = require("dispatch")
-local http = require("socket.http")
+local url = require("socket-lanes.url")
+local dispatch = require("dispatch-lanes")
+local http = require("socket-lanes.http")
 dispatch.TIMEOUT = 10
 
 -- make sure the user knows how to invoke us

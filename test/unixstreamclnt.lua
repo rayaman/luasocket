@@ -1,6 +1,6 @@
 socket = require"socket"
-socket.unix = require"socket.unix"
-c = assert(socket.unix.stream())
+socket-lanes.unix = require"socket-lanes.unix"
+c = assert(socket.unix())
 assert(c:connect("/tmp/foo"))
 while 1 do
     local l = io.read()

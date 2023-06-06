@@ -3,7 +3,7 @@
 -- LuaSocket sample files
 -- Author: Diego Nehab
 -----------------------------------------------------------------------------
-local socket = require("socket")
+local socket = require("socket-lanes")
 host = host or "*"
 port = port or 8080
 if arg then

@@ -1,6 +1,6 @@
-local socket = require("socket")
-local ltn12 = require("ltn12")
-local mime = require("mime")
+local socket = require("socket-lanes")
+local ltn12 = require("ltn12-lanes")
+local mime = require("mime-lanes")
 
 local unpack = unpack or table.unpack
 
@@ -17,16 +17,16 @@ local db64test = "b64test.bin3"
 
 -- from Machado de Assis, "A M�o e a Rosa"
 local mao = [[
-    Cursavam estes dois mo�os a academia de S. Paulo, estando
-    Lu�s Alves no quarto ano e Est�v�o no terceiro.
+    Cursavam estes dois mo�os a academia de S. Paulo, estando 
+    Lu�s Alves no quarto ano e Est�v�o no terceiro. 
     Conheceram-se na academia, e ficaram amigos �ntimos, tanto
-    quanto podiam s�-lo dois esp�ritos diferentes, ou talvez por
+    quanto podiam s�-lo dois esp�ritos diferentes, ou talvez por 
     isso mesmo que o eram. Est�v�o, dotado de extrema
     sensibilidade, e n�o menor fraqueza de �nimo, afetuoso e
     bom, n�o daquela bondade varonil, que � apan�gio de uma alma
     forte, mas dessa outra bondade mole e de cera, que vai �
-    merc� de todas as circunst�ncias, tinha, al�m de tudo isso,
-    o infort�nio de trazer ainda sobre o nariz os �culos
+    merc� de todas as circunst�ncias, tinha, al�m de tudo isso, 
+    o infort�nio de trazer ainda sobre o nariz os �culos 
     cor-de-rosa de suas virginais ilus�es. Lu�s Alves via bem
     com os olhos da cara. N�o era mau rapaz, mas tinha o seu
     gr�o de ego�smo, e se n�o era incapaz de afei��es, sabia

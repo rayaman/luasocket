@@ -11,10 +11,10 @@ local base = _G
 local table = require("table")
 local string = require("string")
 local math = require("math")
-local socket = require("socket")
-local url = require("socket.url")
-local tp = require("socket.tp")
-local ltn12 = require("ltn12")
+local socket = require("socket-lanes")
+local url = require("socket-lanes.url")
+local tp = require("socket-lanes.tp")
+local ltn12 = require("ltn12-lanes")
 socket.ftp = {}
 local _M = socket.ftp
 -----------------------------------------------------------------------------

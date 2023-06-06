@@ -13,8 +13,8 @@ local base = _G
 local os = require("os")
 local math = require("math")
 local string = require("string")
-local socket = require("socket")
-local ltn12 = require("ltn12")
+local socket = require("socket-lanes")
+local ltn12 = require("ltn12-lanes")
 module("socket.lp")
 
 -- default port

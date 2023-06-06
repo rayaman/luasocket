@@ -3,8 +3,8 @@
 -- LuaSocket sample files
 -- Author: Diego Nehab
 -----------------------------------------------------------------------------
-local mime = require("mime")
-local ltn12 = require("ltn12")
+local mime = require("mime-lanes")
+local ltn12 = require("ltn12-lanes")
 local marker = '\n'
 if arg and arg[1] == '-d' then marker = '\r\n' end
 local filter = mime.normalize(marker)

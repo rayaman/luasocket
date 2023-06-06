@@ -13,3 +13,5 @@ Release
 *.suo
 x64
 
+.DS_Store
+*.rock

@@ -1,5 +1,5 @@
 -- load our favourite library
-local dispatch = require("dispatch")
+local dispatch = require("dispatch-lanes")
 local handler = dispatch.newhandler()
 
 -- make sure the user knows how to invoke us

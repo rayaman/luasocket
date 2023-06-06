@@ -31,6 +31,7 @@ static int meth_getpeername(lua_State *L);
 static int meth_shutdown(lua_State *L);
 static int meth_receive(lua_State *L);
 static int meth_accept(lua_State *L);
+static int meth_acceptfd(lua_State *L);
 static int meth_close(lua_State *L);
 static int meth_getoption(lua_State *L);
 static int meth_setoption(lua_State *L);
@@ -45,6 +46,7 @@ static luaL_Reg tcp_methods[] = {
     {"__gc",        meth_close},
     {"__tostring",  auxiliar_tostring},
     {"accept",      meth_accept},
+    {"acceptfd",    meth_acceptfd},
     {"bind",        meth_bind},
     {"close",       meth_close},
     {"connect",     meth_connect},
@@ -88,6 +90,9 @@ static t_opt optget[] = {
     {"error",       opt_get_error},
 	{"recv-buffer-size",     opt_get_recv_buf_size},
 	{"send-buffer-size",     opt_get_send_buf_size},
+    {"rcvbuf",      opt_get_rcvbuf},
+    {"sndbuf",      opt_get_sndbuf},
+    {"debug",       opt_get_debug},
     {NULL,          NULL}
 };
 
@@ -118,6 +123,9 @@ static t_opt optset[] = {
 #ifdef TCP_FASTOPEN_CONNECT
     {"tcp-fastopen-connect", opt_set_tcp_fastopen_connect},
 #endif
+    {"rcvbuf",      opt_set_rcvbuf},
+    {"sndbuf",      opt_set_sndbuf},
+    {"debug",       opt_set_debug},
     {NULL,          NULL}
 };
 
@@ -241,6 +249,28 @@ static int meth_accept(lua_State *L)
     } else {
         lua_pushnil(L);
         lua_pushstring(L, err);
+        return 2;
+    }
+}
+
+/*-------------------------------------------------------------------------*\
+* Waits for and returns a client object attempting connection to the
+* server object, however no socket is created and the file descriptor 
+* is returned instead
+\*-------------------------------------------------------------------------*/
+static int meth_acceptfd(lua_State *L)
+{
+    p_tcp server = (p_tcp) auxiliar_checkclass(L, "tcp{server}", 1);
+    p_timeout tm = timeout_markstart(&server->tm);
+    t_socket sock;
+    int err = socket_accept(&server->sock, &sock, NULL, NULL, tm);
+    /* if successful, push client socket file descriptor */
+    if (err == IO_DONE) {
+        lua_pushnumber(L, sock);
+        return 1;
+    } else {
+        lua_pushnil(L);
+        lua_pushstring(L, socket_strerror(err));
         return 2;
     }
 }
@@ -409,6 +439,14 @@ static int tcp_create(lua_State *L, int family) {
     buffer_init(&tcp->buf, &tcp->io, &tcp->tm);
     if (family != AF_UNSPEC) {
         const char *err = inet_trycreate(&tcp->sock, family, SOCK_STREAM, 0);
+    }
+    t_socket sock;
+    int fileDescriptor = luaL_optnumber(L, 1, -1);
+    
+    if (fileDescriptor < 1) {
+        // create new master socket
+        const char *err = inet_trycreate(&sock, family, SOCK_STREAM);
+
         if (err != NULL) {
             lua_pushnil(L);
             lua_pushstring(L, err);
@@ -416,6 +454,33 @@ static int tcp_create(lua_State *L, int family) {
         }
         socket_setnonblocking(&tcp->sock);
     }
+    else {
+        // create socket from file descriptor
+        sock = fileDescriptor;
+    }
+
+    /* allocate tcp object */
+    p_tcp tcp = (p_tcp) lua_newuserdata(L, sizeof(t_tcp));
+    memset(tcp, 0, sizeof(t_tcp));
+
+    if (fileDescriptor < 1)
+        auxiliar_setclass(L, "tcp{master}", -1);
+    else
+        auxiliar_setclass(L, "tcp{client}", -1);
+
+    /* initialize remaining structure fields */
+    socket_setnonblocking(&sock);
+    if (family == PF_INET6) {
+        int yes = 1;
+        setsockopt(sock, IPPROTO_IPV6, IPV6_V6ONLY,
+            (void *)&yes, sizeof(yes));
+    }
+    tcp->sock = sock;
+    io_init(&tcp->io, (p_send) socket_send, (p_recv) socket_recv,
+            (p_error) socket_ioerror, &tcp->sock);
+    timeout_init(&tcp->tm, -1, -1);
+    buffer_init(&tcp->buf, &tcp->io, &tcp->tm);
+    tcp->family = family;
     return 1;
 }
 

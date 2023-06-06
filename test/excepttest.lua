@@ -1,17 +1,6 @@
-local socket = require("socket")
-
-local finalizer_called
-
-local func = socket.protect(function(err, ...)
-    local try = socket.newtry(function()
-        finalizer_called = true
-    end)
-
-    if err then
-        return error(err, 0)
-    else
-        return try(...)
-    end
+local socket = require("socket-lanes")
+try = socket.newtry(function()
+    print("finalized!!!")
 end)
 
 local ret1, ret2, ret3 = func(false, 1, 2, 3)

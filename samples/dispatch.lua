@@ -6,7 +6,7 @@
 local base = _G
 local table = require("table")
 local string = require("string")
-local socket = require("socket")
+local socket = require("socket-lanes")
 local coroutine = require("coroutine")
 module("dispatch")
 
